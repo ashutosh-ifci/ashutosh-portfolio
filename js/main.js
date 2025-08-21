@@ -269,9 +269,10 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form data
-        const name = contactForm.querySelector('input[type="text"]').value;
+        const inputs = contactForm.querySelectorAll('input[type="text"]');
+        const name = inputs[0].value;
+        const subject = inputs[1].value;
         const email = contactForm.querySelector('input[type="email"]').value;
-        const subject = contactForm.querySelector('input[type="text"]:nth-of-type(2)').value;
         const message = contactForm.querySelector('textarea').value;
         const captchaInput = parseInt(document.getElementById('captcha-input').value);
         
